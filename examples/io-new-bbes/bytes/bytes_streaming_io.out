@@ -1,0 +1,12 @@
+# To run this sample, navigate to the directory that contains the
+# `.bal` file, and execute the `ballerina run` command below.
+# Note that, to run this example successfully you should place an image in the file directory as follows.
+# tree .
+# ├── files
+# │   └── ballerina.jpeg
+# └── bytes_streaming_io.bal
+ballerina run bytes_streaming_io.bal
+
+Successfully copied the image
+Source: ./files/ballerina.jpeg
+Destination: ./files/ballerinaCopy.jpeg
