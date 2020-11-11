@@ -1,7 +1,6 @@
 import ballerina/io;
-import ballerina/log;
 
-public function main() returns error? {
+public function main() returns @tainted error? {
     string filePath = "./files/sample.json";
     json content = {"Store": {
             "@id": "AST",
@@ -13,15 +12,9 @@ public function main() returns error? {
             "codes": ["4", "8"]
         }};
 
-    var writeResult = io:fileWriteJson(filePath, content);
-    if (writeResult is error) {
-        log:printError("Error occurred while performing write ", writeResult);
-    } else {
-        var readResult = io:fileReadJson(filePath);
-        if (readResult is json) {
-            io:println(readResult);
-        } else {
-            log:printError("Error occurred while performing read ", readResult);
-        }
-    }
+    // Writes the given JSON to a file.
+    check io:fileWriteJson(filePath, content);
+    // If the write operation was successful, then perform a read operation to read the JSON content.
+    json readJson = check io:fileReadJson(filePath);
+    io:println(readJson);
 }

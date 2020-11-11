@@ -7,6 +7,4 @@
 # └── bytes_streaming_io.bal
 ballerina run bytes_streaming_io.bal
 
-Successfully copied the image
-Source: ./files/ballerina.jpeg
-Destination: ./files/ballerinaCopy.jpeg
+Successfully copied the image.
